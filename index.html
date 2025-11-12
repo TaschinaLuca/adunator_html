@@ -6,6 +6,73 @@ Când utilizatorul apasă butonul sau modifică valorile, se recalculează. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adunare Numere</title>
+    <style>
+        /* Centrare verticală și orizontală a conținutului */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        /* Container centrat cu text centrat */
+        .wrapper {
+            text-align: center;
+            width: 320px;
+            padding: 24px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+
+        /* Elemente formular centrate */
+        label, input, button, h2 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            max-width: 260px;
+            padding: 8px 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center; /* aliniere a valorii în input */
+        }
+
+        button {
+            margin-top: 14px;
+            padding: 8px 16px;
+            border: none;
+            background: #0078d4;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005a9e;
+        }
+
+        #rezultat {
+            margin-top: 16px;
+        }
+    </style>
+
     <script>
         function adunaNumere() {
             const numar1 = parseFloat(document.getElementById('numar1').value) || 0;
@@ -16,14 +83,18 @@ Când utilizatorul apasă butonul sau modifică valorile, se recalculează. -->
     </script>
 </head>
 <body>
-    <h1>Adunare Numere</h1>
-    <label for="numar1">Număr 1:</label>
-    <input type="number" id="numar1" oninput="adunaNumere()">
-    <br>
-    <label for="numar2">Număr 2:</label>
-    <input type="number" id="numar2" oninput="adunaNumere()">
-    <br>
-    <button onclick="adunaNumere()">Adună</button>
-    <h2 id="rezultat">Suma: 0</h2>
+    <div class="wrapper">
+        <h1>Adunare Numere</h1>
+
+        <label for="numar1">Număr 1:</label>
+        <input type="number" id="numar1" oninput="adunaNumere()">
+
+        <label for="numar2">Număr 2:</label>
+        <input type="number" id="numar2" oninput="adunaNumere()">
+
+        <button onclick="adunaNumere()">Adună</button>
+
+        <h2 id="rezultat">Suma: 0</h2>
+    </div>
 </body>
 </html>
